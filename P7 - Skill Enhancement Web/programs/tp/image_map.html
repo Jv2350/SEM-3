@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Image Mapping Example</title>
+    <style>
+        area {
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Image Mapping Example</h1>
+    
+    <img src="nature.png" alt="Your Image" usemap="#imageMap" width="400">
+    
+    <map name="imageMap">
+        <area shape="rect" coords="10,10,100,100" href="page1.html" alt="Area 1">
+        <area shape="circle" coords="200,100,50" href="page2.html" alt="Area 2">
+        <area shape="polygon" coords="300,200,400,250,350,350" href="page3.html" alt="Area 3">
+    </map>
+</body>
+</html>

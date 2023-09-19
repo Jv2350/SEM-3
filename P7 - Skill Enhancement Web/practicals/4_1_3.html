@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+
+<head>
+    <script>
+        function fibonacii() {
+            var a = 1;
+            var b = 0;
+            var c;
+            var num;
+            var num = Number(document.getElementById("num").value)
+            document.write("fibonacii series: ");
+
+
+            for (a = 1; a <= num; a++) {
+                document.write(a+" ")
+                c = a + b;
+                a = b;
+                b = c;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <labeL>Enter number:</label>
+        <input id="num">
+        <input type="button" onclick="fibonacii()" value="result">
+</body>
+
+</html>

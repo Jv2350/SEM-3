@@ -1,0 +1,1 @@
+create table emp(eid number, ename varchar2(20), salary number);

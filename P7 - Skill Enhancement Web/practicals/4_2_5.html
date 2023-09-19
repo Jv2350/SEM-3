@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <script type="text/javascript">
+        function validatePhNum(){
+            var ph = document.myform.phnum.value;
+            if(ph==""){
+                alert("Enter the phone number!!");
+            } else if(isNaN(ph)){
+                alert("Invaid number!!");
+            } else if(ph.length<10){
+                alert("Phone number must have atleast 10 digits");
+            } else{
+                alert("Entered correct number!!")
+            }
+        }
+    </script>
+</head>
+<body>
+    <form name="myform">
+        Phone number: <input type="text" name="phnum"><br><input type="button" value="submit" onclick="validatePhNum()">
+    </form>
+</body>
+</html>

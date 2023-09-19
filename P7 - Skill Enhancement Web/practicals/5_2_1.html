@@ -1,0 +1,22 @@
+<!-- confirm box program: -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Confirm box</title>
+    <script>
+        function Confirm_box(){
+            var data;
+            if(confirm("Are you sure?")==true){
+                data="You have pressed OK";
+            } else {
+                data = "You have pressed Cancel";
+            }
+            document.write(data);
+        }
+    </script>
+</head>
+<body>
+    <input type="button" onclick="Confirm_box()" value="Click here">
+    
+</body>
+</html>

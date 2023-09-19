@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Image maping</title>
+<style>
+    .image-container {
+      position: relative;
+      display: inline-block;
+    }
+  
+    .border-overlay {
+      position: absolute;
+      border: 2px solid red; /* Adjust the border properties as needed */
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+    
+ 
+  <div class="image-container">
+    <img src="Coords.png" alt="Your Image" width="1000px" usemap="#cords">
+    <div class="border-overlay" style="top: 150px; left: 31px; width: 249px; height: 212px"></div>
+    <div class="border-overlay" style="top: 165px; left: 385px;width: 183px; height: 183px; border-radius: 50%;"></div>
+    <div class="border-overlay" style="clip-path:polygon(685,211,800,155,920,265,925,345,755,345)"></div>
+
+  </div>
+  
+  <map name="cords">
+    <area shape="rect" coords="103,166,320,350" href="https://www.google.co.in/" alt="rectangle">
+    <area shape="circle" coords="477,257,91" href="https://www.google.co.in/" alt="circle">
+    <area shape="poly" coords="685,211,800,155,920,265,925,345,755,345" href="https://www.google.co.in/" alt="polygon">
+    <!-- Define other areas as needed -->
+  </map>
+</body>
+</html>

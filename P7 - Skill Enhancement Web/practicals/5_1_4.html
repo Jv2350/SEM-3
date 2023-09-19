@@ -1,0 +1,25 @@
+<!-- 5.1.4 Date demonstration
+PROGRAM: -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Date demonstration</title>
+    </head>
+  <body>
+    <h2>DATE Demonstration</h2>
+    <script>
+      document.write(Date());
+      var d= new Date();
+      document.write("<br>"+d+"<br>");
+      var d1 = new Date("August 30,2004 17:11:00"); 
+      document.write("<br>"+d1+"<br>");
+      var d2 = new Date(45400000);
+      document.write("<br>"+d2+"<br>");
+      var d3= new Date(99,5,24,11,33,30,0);
+      document.write("<br>"+d3+"<br>");
+      var d4 = new Date(99,5,24); 
+      document.write("<br>"+d4+"<br>"); 
+      document.write("<br>"+"d.toUTCSString()"+d.toUTCSString());
+    </script>
+  </body>
+</html>

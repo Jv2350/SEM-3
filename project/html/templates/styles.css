@@ -1,0 +1,38 @@
+body {
+    font-family: Arial, sans-serif;
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+  
+  .array-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .array-element {
+    border: 1px solid lightblue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 5px;
+    font-size: 18px;
+    background-color: white;
+    padding: 5px;
+  }
+  
+  .search-box {
+    margin-top: 20px;
+  }
+  
+  button {
+    padding: 8px 16px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  

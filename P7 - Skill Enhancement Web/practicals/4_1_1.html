@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+    <head>
+        <script>
+            function display(){
+                var i=1;
+                var fact=1;
+                var a = Number(document.getElementById("num").value); 
+                for(i=1; i<=a; i++)
+                    fact =fact*i;
+                {
+                document.write("Factorial of  "+a+" is: "+fact);
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <label>Enter number:</label>
+        <input id="num">
+        <input type="button" onclick="display()" value="result">
+    </body>
+</html>

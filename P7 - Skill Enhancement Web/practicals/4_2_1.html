@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <script>
+        function validNum(){
+            var num = document.myForm.num.value;
+            if(isNaN(num)){
+                document.write("Please enter numeric value only!!");
+            } else {
+                document.write("Your enter correct value!!");
+            }
+        }
+    </script>
+</head>
+<body>
+    <form name="myForm" action="">
+        <input type="text" name="num">
+        <input type="button" value="Click here" onclick="validNum()">
+    </form>
+</body>
+</html>

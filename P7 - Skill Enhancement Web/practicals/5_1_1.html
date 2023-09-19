@@ -1,0 +1,22 @@
+<!-- Regular expression demonstration. PROGRAM: -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Regular expression demonstration program</title>
+    </head>
+    <body>
+        <p>REGULAR EXPRESSION</p>
+        <button onclick="myFunction()">click</button>
+        <script>
+            function myFunction() {
+                var str = "All these are not possible using HTML!";
+                var n = str.search(/possible/i);
+                document.write("<br>" + n + "<br>");
+                var res = str.replace(/possible/i, "POSSIBLE");
+                document.write("<br>" + res + "<br>");
+                var patt = /e/;
+                document.write("<br>" + patt.test(str) + "<br>");
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>The Window Object</h1>
+<script>
+// window.defaultStatus = "Default text in the status bar.";
+document.write(window.defaultStatus,"<br>");
+document.write(innerHeight,"<br>");
+document.write(innerWidth,"<br>")
+
+let timeout;
+
+function myFunction() {
+  timeout = window.setTimeout(alertFunc, 2000);
+}
+
+function alertFunc() {
+  alert("Hello!");
+}
+</script>
+
+<button onclick="window.alert('Hello!!')">Alert button</button><br>
+<button onclick="window.confirm('Hello!!')">Confirm button</button><br>
+<button onclick="window.prompt('Hello!!')">Prompt button</button><br>
+<button onclick="window.open('https://youtu.be/8ybW48rKBME?si=qGknAfbFUrt1nIkY')">Open button</button><br>
+<button onclick="window.close()">Close button</button><br>
+<button onclick="myFunction()">Timeout button</button><br>
+<button onclick="navigator.appCodeName()"">Appcode button</button><br>
+</body>
+</html>

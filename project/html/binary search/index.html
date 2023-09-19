@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Number List Input</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>Enter Numbers</h1>
+    <form id="numberForm">
+        <label for="numberInput">Number:</label>
+        <input type="number" id="numberInput" name="numberInput">
+        <div class="button-group">
+            <button type="button" id="confirmBtn">Confirm</button>
+            <button type="button" id="sortBtn">Sort</button>
+        </div>
+    </form>
+</div>
+
+<div class="number-list-container">
+    <h2>User Entered List</h2>
+    <ul class="number-list" id="userList"></ul>
+</div>
+
+<div class="number-list-container">
+    <h2>Sorted List</h2>
+    <ul class="number-list" id="sortedList"></ul>
+</div>
+
+<div class="number-list-container">
+    <h2>Binary Search Result</h2>
+    <div class="binary-search-list" id="binarySearchList"></div>
+    <label for="searchInput">Search for a number:</label>
+    <input type="number" id="searchInput">
+    <button type="button" id="binarySearchBtn">Search</button>
+    <button type="button" id="nextStepBtn">Next Step</button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

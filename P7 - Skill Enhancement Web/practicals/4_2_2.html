@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <script>
+        function validateLogin(){
+            var name = document.myForm.name.value;
+            var pwd = document.myForm.password.value;
+            
+            if (name==null || name == ""){
+                alert("Name can not be blank!!");
+                return false;
+            } else if(pwd.length<6){
+                alert("Password must be atleast 6 characters long !!");
+                return false; 
+            }
+        }
+    </script>
+    <style>
+        *{
+            position: ;
+        }
+    </style>
+</head>
+<body>
+    <form name="myForm">
+        <label>Enter your name: </label>
+        <input type="text" name="name"><br>
+        <label>Enter password: </label>
+        <input type="password" name="password"><br>
+        <input type="button" value="Click here" onclick="validateLogin()">
+    </form>
+
+</body>
+</html>

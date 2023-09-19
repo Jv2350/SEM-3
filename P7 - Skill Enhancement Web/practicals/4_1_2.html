@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <script>
+        function display(){
+            var i = 0;
+            var j = o;
+            var counter;
+            var b;
+            var a = Number(document.getElementById("num").value);
+            document.write("Prime numbers are: ");
+
+            for(i=1;i<=a;i++){
+                counter = 0;
+                for(j=1;j<=i;j++){
+                    if (i%j==0){
+                        counter++;
+                    }
+                    if(counter==2){
+                        document.write("<br>"+i);
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <label>Enter number: </label>
+    <input type="button" onclick="display()" value="result">
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script>
+        function display() {
+            var a = Number(document.getElementById("first").value);
+            var b = Number(document.getElementById("second").value);
+            var c = a + b;
+            document.write("Addition of " + a + " and " + b + " is : " + c);
+        }
+    </script>
+</head>
+
+<body>
+    <label>Enter first number:</label>
+    <input id="first">
+    <br>
+    <label>Enter second number:</label>
+    <input id="second">
+    <br>
+    <input type="button" onclick="display()" value="ok">
+</body>
+
+</html>

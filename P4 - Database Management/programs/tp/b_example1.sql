@@ -1,0 +1,9 @@
+DECLARE
+    MARKS_OBTAINED NUMBER(2);
+    CLASS VARCHAR2(10) NOT NULL := 'SYBSC CS';
+BEGIN
+    MARKS_OBTAINED := 10;
+    Class := 'SYBSC CS';
+    DBMS_OUTPUT.PUT_LINE('I am studying in '||CLASS);
+END;
+/

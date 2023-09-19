@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <title>Document</title>
+    <script>
+        function retype_pass(){
+            var firstpwd = document.f1.password.value;
+            var secondpwd = document.f1.password2.value;
+
+            if(firstpwd == secondpwd){
+                alert("Entered correct password!!");
+                return ture;
+            } else {
+                alert("Both password must be same!!!")
+                return false;
+            }
+        }
+    </script>
+</head>
+<body>
+    <form name="f1">
+        <label>Enter password: </label>
+        <input type="password" name="password"><br>
+        <label>Enter confirm password: </label>
+        <input type="password" name="password2"><br>
+        <input type="button" value="Click here" onclick="retype_pass()">
+    </form>
+</body>
+</html>
