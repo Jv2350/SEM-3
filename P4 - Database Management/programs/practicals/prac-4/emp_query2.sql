@@ -1,0 +1,15 @@
+set serveroutput on
+
+DECLARE
+    ID  EMP.EID%TYPE;
+    SAL EMP.SALARY%TYPE;
+BEGIN
+    ID:=&ID;
+    SELECT SALARY INTO SAL FROM EMP WHERE EID=ID;
+
+    IF (SAL <= 20000) THEN
+        UPDATE EMP SET SALARY=SALARY+2000 WHERE EID=ID;
+        DBMS_OUTPUT.PUT_LINE('Salary is updated!!');
+    END IF;
+END;
+/
