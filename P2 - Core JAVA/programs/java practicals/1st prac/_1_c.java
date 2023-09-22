@@ -6,18 +6,19 @@ public class _1_c {
     public static void main(String[] args) {
         DataInputStream input = new DataInputStream(System.in);
         
+        int intValue = 0;
+        float floatValue = 0.0f;
         try {
             System.out.print("Enter an integer: ");
-            int intValue = Integer.parseInt(input.readLine());
+            intValue = Integer.parseInt(input.readLine());
 
             System.out.print("Enter a floating-point number: ");
-            float floatValue = Float.parseFloat(input.readLine());
+            floatValue = Float.parseFloat(input.readLine());
 
-            System.out.println("Integer: " + intValue);
-            System.out.println("Float: " + floatValue);
-
-            input.close();
         } catch (Exception e) {}
+
+        System.out.println("Integer number is "+intValue);
+        System.out.println("Floating point number is "+floatValue);
     }
 }
 

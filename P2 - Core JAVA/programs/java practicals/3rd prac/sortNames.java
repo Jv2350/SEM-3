@@ -30,7 +30,7 @@ public class sortNames {
             
             System.out.println("\nNames in sorted order: ");
             for (int i = 0; i < n; i++) {
-                System.out.print(names[i]+" ");
+                System.out.println((i+1)+". "+names[i]);
             }
         }
     }

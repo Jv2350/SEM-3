@@ -23,7 +23,7 @@ public class AccountBalance{
         Balance[] cur = new Balance[3];
         cur[0] = new Balance("Jayesh", 123.123);
         cur[1] = new Balance("Yash", 6234.6234);
-        cur[2] = new Balance("Jay", 2856.25);
+        cur[2] = new Balance("Jay", -2856.25);
 
         for(int i=0;i<3;i++) 
             cur[i].show();
