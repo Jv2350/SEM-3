@@ -1,0 +1,15 @@
+create sequence roll_no 
+start with 1
+increment by 1
+maxvalue 100
+minvalue 1
+cache 20
+cycle 
+order;
+
+
+
+select roll_no.nextVal from dual;
+select roll_no.currrval from dual;
+alter sequence roll_no
+drop sequence roll_no

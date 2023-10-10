@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script type="text/javascript">
+      function ReadData() {
+        document.cookie = "prachi=103";
+        var cookies = document.cookie;
+
+        document.write("Data of all cookies: " + cookies);
+
+        var arr = cookies.split(";");
+        for (var i = 0; i < arr.length; i++) {
+          var cookie = arr[i].trim(); 
+          var name = cookie.split("=")[0];
+          var value = cookie.split("=")[1];
+          document.write("<br>key is: " + name + " and value is: " + value);
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <p>Click to set and get Cookie data</p>
+    <input type="button" value="Set and Get Cookie" onclick="ReadData()" />
+  </body>
+</html>

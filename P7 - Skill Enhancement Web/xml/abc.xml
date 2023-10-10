@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml-stylesheet type="text/xsl" ?>
+<!DOCTYPE book[
+<!ELEMENT book (bname.author.price)>
+<!ELEMENT bname (#PCDATA)>
+<!ELEMENT author (#PCDATA)>
+<!ELEMENT price (#PCDATA)>
+]>
+<book>
+<bname>Pranali Navale</bname> 
+<author>TutorialsPoint</author>
+<price>(011) 123-4567</price>
+</book>

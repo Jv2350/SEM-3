@@ -11,7 +11,6 @@ class Add extends Thread {
     }
 
     // Override the 'run' method to perform addition and print the result
-    @Override
     public void run() {
         System.out.println("Addition is : " + (n1 + n2));
     }
@@ -89,6 +88,7 @@ class ThreadDemo {
             new Sub(a, b).start();
             new Mul(a, b).start();
             new Div(a, b).start();
+            scanner.close();
         } catch (Exception e) {
             // Handle exceptions that may occur during user input or thread execution
             System.err.println("An error occurred: " + e.getMessage());

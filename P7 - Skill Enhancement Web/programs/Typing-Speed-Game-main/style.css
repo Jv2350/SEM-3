@@ -24,7 +24,7 @@ body {
     background: #007acc;
 }
 .wrapper {
-    width: 700px;
+    width: 1200px;
     padding: 35px;
     background: #1e1e1e;
     border-radius: 10px;
@@ -49,7 +49,7 @@ body {
 }
 .typing-text p {
     font-size: 21px;
-    text-align: justify;
+    text-align:;
     letter-spacing: 1px;
     word-break: break-all;
 }

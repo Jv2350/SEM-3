@@ -1,0 +1,113 @@
+1. Write a PL/SQL program to check whether number is less than 50
+
+program:
+declare
+    num number;
+
+begin
+    num := 10;
+    if num < 50 then 
+        dbms_output.put_line('Number is less than 50');
+    end if;
+
+end;
+/
+
+2. Write a PL/SQL program to check number entered by user is less than 50.
+
+program:
+
+accept num prompt "Enter the number: "
+delcare 
+    num number;
+
+begin
+    num := &num;
+    if num < 50 then 
+        dbms_output.put_line(num||' is less than 50');
+    end if;
+    dbms_output.put_line('Entered number is '||num);
+end;
+/
+
+3. Write a PL/SQL program to update salary of employee by 2000 if salary is less than or equal to 20000
+
+firstly we have to ceate the emp table with salary column complusary 
+therefore- create table emp(eid number, ename varchar2(20), salary number);
+
+now to insert the values in the table - insert into emp values(&eid, '&ename', &salary);
+
+program:
+-- this program will perform the update operation on the eid =1 only that 
+declare
+    sal emp.salary%type;
+    id emp.eid%type=1;
+begin
+    select salary into sal from emp where eid =id;
+        if(salary<=200) then 
+            update emp set salary=salary+2000 where eid=id;
+            dbms_output.put_line('Salary updated');
+        end if;
+end;
+/
+
+program:
+--to update salary for user entered employee id
+accept id prompt "Enter the employee id: "
+declare
+    sal emp.salary%type;
+    id emp.eid%type;
+
+begin  
+    id:=&id;
+    select salary into sal from emp where eid = id;
+        if (salary < 2000) then 
+            update emp set salary=salary+2000 where eid=id;
+            dbms_output.put_line('Salary updated);
+        end if;
+    
+end;
+/
+
+--to update for all the eid
+declare 
+    id emp.eid%type;
+    sal emp.salary%type;
+
+begin   
+    for i in 1..100 loop
+        select salary into sal from emp where eid=i;
+            if(salary<2000) then
+                update emp set salary=salary+2000 where eid=i;
+                dbms_output.put_line('Salary updated');
+            end if;
+    end loop;
+
+end;
+/
+
+
+3. write a pl/sql program to display which remark got.
+
+accept grade prompt "Enter your grade: "
+
+declare
+    grade char;
+begin
+    grade:='&grade';
+
+    case grade
+        when 'A' then 
+            dbms_output.put_line('Exellent';)
+        when 'B' then 
+            dbms_output.put_line('Very good';)
+        when 'C' then 
+            dbms_output.put_line('Good';)
+        when 'D' then 
+            dbms_output.put_line('You passed';)
+        when 'F then 
+            dbms_output.put_line('Better luck next time';)
+
+    end case;
+end;
+/

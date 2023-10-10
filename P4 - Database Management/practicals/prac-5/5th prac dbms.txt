@@ -1,0 +1,25 @@
+1. Write a program to find reverse of a number entered by the user.
+
+accept num prompt "Enter the number: "
+
+declare 
+    num number;
+    rem number;
+    rev number;
+
+begin
+    num := &num;
+    rev := 0;
+
+    while num > 0 loop
+        rem := mod(num,10);
+        rev := (rev*10)+rem;
+        num := trunc(num/10);
+    end loop;
+
+    
+    dbms_output.put_line('Reverse of '||num||' is '||rev);
+end;
+/
+
+2. Write a PL/SQL program to print Fibonacci series.

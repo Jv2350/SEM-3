@@ -1,0 +1,43 @@
+question: Create a DML trigger that uses conditional predicted to determine which of its four possible triggering statement fired it.
+
+create a emp table with several columns required in the question 
+create as many rows as we want in the table(atleast 3 rows are required) 
+
+trigger program:
+set serveroutput on 
+
+create or replace trigger before_trigger
+before
+insert or delete or update of sal, dept 
+on emp
+
+begin 
+    case 
+        when inserting then 
+            dbms_output.put_line('Inserting the value.');
+        when deleting then 
+            dbms_output.put_line('Deleting the value.');
+        when updating ('dept')then 
+            dbms_output.put_line('Updating the dept value.');
+        when updating ('sal')then 
+            dbms_output.put_line('updating the sal value.');
+    end case;
+end;
+/
+
+to create the file (edit file_name) {this command will create the file if not exist and open if file is exist}
+
+run the program fiel(@file_name)
+
+to invoke the trigger
+just perform the operation mentioned (insert, update or delete)
+
+syntax:
+for insertion
+insert into table_name values(column_name data_type,....n)
+
+for deletion:
+delete table_name where condition(id=1)
+
+for updatation:
+update table_name set update_col_name=new_value where condition(id=1)

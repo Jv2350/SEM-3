@@ -18,7 +18,7 @@ public class ReaderWriter {
         System.out.println(); // Print a newline
         System.out.println("\nWith BufferedReader and InputStreamReader");
 
-        // Create a BufferedReader to read input from the console using InputStreamReader
+        // Create a BufferedReader to read input from the console using InputStreamReader  
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         System.out.print("Enter a line: ");
 

@@ -13,8 +13,9 @@ public class sortNames {
             input.nextLine(); 
 
             String[] names = new String[n];
-            System.out.println("Enter " + n + " names: ");
+            System.out.println("Enter total " + n + " names.");
             for (int i = 0; i < n; i++) {
+                System.out.print("Enter " + (i+1) + " names: ");
                 names[i] = input.nextLine();
             }
             

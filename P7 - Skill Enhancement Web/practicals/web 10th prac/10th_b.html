@@ -1,0 +1,21 @@
+<html>
+  <body>
+    <h1>Example of XMLHttpRequest Object</h1>
+     <button type="button" onmouseover="Showdoc()">Show File Content</button>
+    <script>
+      function Showdoc() {
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+          if (this.readyState == 4 && this.status == 200) {
+            document.write(this.responseText);
+          }
+        };
+        xhttp.open("GET", "Myfile.txt", true);
+        xhttp.send();
+      }
+    </script>
+    
+  </body>
+  
+</html>
+

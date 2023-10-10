@@ -1,0 +1,14 @@
+Create a sequence for employee id which start with 101, incremented by 1, maxvalue is 2000, minvalue is 101, cache=20 with no cycle and attached this sequence to your employee table.
+
+create sequence emp_seq
+start with 101
+increment by 1
+maxvalue 2000
+minvalue 101
+cache 20
+nocycle;
+
+
+now after this we have to create a emp table 
+create table emp(eid number(20),ename varchar2(10),esalary number(10),dept varchar2(20),dob date);
+insert into emp values(emp_seq.nextVal,'&ename',&salary,'&dept','&dob');

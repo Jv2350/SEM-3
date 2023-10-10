@@ -7,7 +7,7 @@ public class _2_c {
         double root1, root2;
 
         try(Scanner input = new Scanner(System.in)){
-            System.out.println("Enter values for a, b, c: ");
+            System.out.print("Enter values for a, b, c: ");
             a = input.nextInt();
             b = input.nextInt();
             c = input.nextInt();
@@ -26,8 +26,8 @@ public class _2_c {
         } else {
             double real = -b / (2 * a);
             double imaginary = Math.sqrt(-dtrmnt) / (2 * a);
-            System.out.format("root1 = %.2f+%.2fi", real, imaginary);
-            System.out.format("\nroot2 = %.2f-%.2fi", real, imaginary);
+            System.out.format("root1 = %.2f + %.2fi", real, imaginary);
+            System.out.format("\nroot2 = %.2f - %.2fi", real, imaginary);
         }
     }
 }
