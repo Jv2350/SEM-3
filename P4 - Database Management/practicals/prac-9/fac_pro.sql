@@ -1,7 +1,6 @@
 accept num prompt 'Enter the number: '
 
-
-set serveroutput on 
+set serveroutput on
 DECLARE 
 
     num number;
