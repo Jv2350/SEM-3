@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <h1>Database PHP</h1>
+</head>
+<body>
+<?php
+$host = 'localhost';
+$username = 'root';
+$password = '';
+$database = 'Emp_record';
+
+// Create a connection to the database
+$conn = new mysqli($host, $username, $password);
+
+if ($conn->connect_error) {
+    die('Could not connect: ' . $conn->connect_error);
+}
+
+// Create the database
+$sql = "CREATE DATABASE IF NOT EXISTS $database";
+if ($conn->query($sql) === TRUE) {
+    echo "Database $database created successfully.<br>";
+} else {
+    echo "Error creating database: " . $conn->error . "<br>";
+}
+
+// Select the database
+$conn->select_db($database);
+
+// Create the student table
+$sql = "CREATE TABLE IF NOT EXISTS student (
+    Sno INT(6) AUTO_INCREMENT PRIMARY KEY,
+    sname VARCHAR(30) NOT NULL,
+    percentage INT(6)
+)";
+if ($conn->query($sql) === TRUE) {
+    echo "Table student created successfully.<br>";
+} else {
+    echo "Error creating table: " . $conn->error . "<br>";
+}
+
+// Insert data into the student table
+$sql = "INSERT INTO student (sname, percentage) VALUES (?, ?)";
+$stmt = $conn->prepare($sql);
+$stmt->bind_param("si", $sname, $percentage);
+
+$sname = "Sumit";
+$percentage = 56;
+$stmt->execute();
+
+$sname = "Sneha";
+$percentage = 78;
+$stmt->execute();
+
+$sname = "Amit";
+$percentage = 78;
+$stmt->execute();
+
+$stmt->close();
+echo "3 rows inserted.<br>";
+
+// Display data from the student table
+$sql = "SELECT Sno, sname, percentage FROM student";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    echo "<table border='1'>
+    <tr>
+    <th>Sr no.</th>
+    <th>Name</th>
+    <th>Percentage</th>
+    </tr>";
+
+    while ($row = $result->fetch_assoc()) {
+        echo "<tr>";
+        echo "<td>" . $row['Sno'] . "</td>";
+        echo "<td>" . $row['sname'] . "</td>";
+        echo "<td>" . $row['percentage'] . "</td>";
+        echo "</tr>";
+    }
+
+    echo "</table>";
+} else {
+    echo "0 results";
+}
+
+$conn->close();
+?>
+</body>
+</html>

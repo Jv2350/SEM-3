@@ -1,0 +1,853 @@
+// 1.a. Write a java program to display "welcome to java"
+
+public class _1_a{
+    public static void main(String args[]){
+        System.out.println("Welcome to java");
+    }
+} 
+
+//1.b Write a java program to display your name 10 times
+
+public class _1_b {
+    public static void main(String[] args){
+        for(int i=1;i<=10;i++){
+            System.out.println(i+". Jayesh");
+        }
+    }
+}
+
+//1.c Write a java program for reading data from keyboard using data input stream
+
+import java.io.DataInputStream;
+
+public class _1_c {
+    public static void main(String[] args) {
+        DataInputStream input = new DataInputStream(System.in);
+        
+        int intValue = 0;
+        float floatValue = 0.0f;
+        try {
+            System.out.print("Enter an integer: ");
+            intValue = Integer.parseInt(input.readLine());
+
+            System.out.print("Enter a floating-point number: ");
+            floatValue = Float.parseFloat(input.readLine());
+
+        } catch (Exception e) {}
+
+        System.out.println("Integer number is "+intValue);
+        System.out.println("Floating point number is "+floatValue);
+    }
+}
+
+//2.a write a java program to accept and display single dimensional array
+
+public class _2_a {
+    public static void main(String[] args){
+        int array[];
+        array = new int[5];
+
+        System.out.print("Array elements are: ");
+        for(int i=0;i<array.length;i++){
+            array[i] = i+1;
+            System.out.print(array[i]+" ");
+        }
+    }
+}
+
+//2.b write a java program to accept and display two dimensional array
+
+import java.util.Scanner;
+// import java.io.IOException;
+
+public class _2_b {
+    public static void main(String[] args){
+        try(Scanner input = new Scanner(System.in)){
+            
+            System.out.print("Enter number of rows for array: ");
+            int row = input.nextInt();
+            System.out.print("Enter number of colums for array: ");
+            int col = input.nextInt();
+        
+            int arr[][] = new int[row][col];
+
+            System.out.println("\nCreating the "+(row)+"x"+(col)+" array.");
+            for(int i=0; i<row;i++){
+                for(int j=0;j<col;j++){
+                    System.out.print("Enter element for ["+i+"]["+j+"] index: ");
+                    arr[i][j] = input.nextInt();
+                }
+            }
+            System.out.println("Array elements are: ");
+            for(int i =0;i<row;i++){
+                for(int j=0;j<col;j++){
+                    System.out.print(arr[i][j]+" ");
+                }
+                System.out.println();
+            }
+        }
+    }
+}
+
+//2.c write a java program to accept value of a,b,c which are co-efficient of quadratic equation
+
+import java.util.Scanner;
+public class _2_c {
+    public static void main(String[] args){
+        int a,b,c;
+        double root1, root2;
+
+        try(Scanner input = new Scanner(System.in)){
+            System.out.print("Enter values for a, b, c: ");
+            a = input.nextInt();
+            b = input.nextInt();
+            c = input.nextInt();
+        }
+ 
+        double dtrmnt = (b * b) - (4 * a * c);
+
+        if(dtrmnt>0){
+            root1 = (-b + Math.sqrt(dtrmnt))/(2*a);
+            root2 = (-b - Math.sqrt(dtrmnt))/(2*a);
+
+            System.out.format("root1 = %.2f and root2 = %.2f",root1,root2);
+        } else if(dtrmnt == 0){
+            root1 = root2 = -b / (2 * a);
+            System.out.format("root1 = root2 = %.2f;", root1);
+        } else {
+            double real = -b / (2 * a);
+            double imaginary = Math.sqrt(-dtrmnt) / (2 * a);
+            System.out.format("root1 = %.2f + %.2fi", real, imaginary);
+            System.out.format("\nroot2 = %.2f - %.2fi", real, imaginary);
+        }
+    }
+}
+
+//3.a Write a Java program to demonstrate the use of String methods
+
+public class str {
+    public static void main(String[] args){
+        System.out.println("----Using the String Class----");
+
+        char ch[]={'J','A','Y','E','S','H',' ','V','E','R','M','A'};
+
+        String s1 = "Jayesh Verma";
+        String s2 = "Jayesh Verma";
+        String s3 = new String("Jayesh R. Verma");
+        String s4 = new String(ch);
+
+        System.out.println(s1);
+        System.out.println(s2);
+        System.out.println(s3);
+        System.out.println(s4);
+
+        System.out.println("\n----Formatted String----");
+        String name = "Jayesh";
+
+        String sf1 = String.format("Name is %s",name);
+        String sf2 = String.format("Value is %f",12039.124);
+        String sf3 = String.format("Value is %20.7f",9720.3533);
+
+        System.out.println(sf1);
+        System.out.println(sf2);
+        System.out.println(sf3);
+
+        String sf4 = String.format("%d",101);
+        String sf5 = String.format("%s","Jayesh Verma");
+        String sf6 = String.format("%f",101.00);
+        String sf7 = String.format("%x",105);
+        String sf8 = String.format("%c",'J');
+
+        System.out.println(sf4);
+        System.out.println(sf5);
+        System.out.println(sf6);
+        System.out.println(sf7);
+        System.out.println(sf8);
+
+        System.out.println("\n----Integer Formatting----");
+
+        String si1 = String.format("%d",101);
+        String si2 = String.format("|%10d|",101);
+        String si3 = String.format("|%-10d|",101);
+        String si4 = String.format("|%d|",101);
+        String si5 = String.format("|%010d|",101);
+
+        System.out.println(si1);
+        System.out.println(si2);
+        System.out.println(si3);
+        System.out.println(si4);
+        System.out.println(si5);
+
+        System.out.println("\n----Substring Demo----");
+        String ss1 = "Jayesh R. Verma";
+        String substr1 = ss1.substring(+2);
+        System.out.println("Fetching the substring starting with index 2: "+substr1);
+        
+        String substr2 = ss1.substring(3, 13);
+        System.out.println("Fetching the substring starting with index 3 and ending to index 13: "+substr2);
+
+        System.out.println("The length of string: "+ss1.length());
+        System.out.println("String contains(. V)?: "+ss1.contains(". V"));
+        System.out.println("Character at index 7: "+ss1.charAt(7));
+
+        String se1 = "Jayesh";
+        String se2 = "jayesh";
+        String se3 = "Jayesh";
+        
+        System.out.println("\nString 1: "+se1);
+        System.out.println("String 2: "+se2);
+        System.out.println("String 3: "+se3);
+        System.out.println("\n----Case Sensetive----");
+        
+        
+        System.out.println("String1 is equal to string2?: "+se1.equals(se2));
+        System.out.println("String1 is equal to string3?: "+se1.equals(se3));
+        
+        System.out.println("\n----Case Insensetive----");
+        System.out.println("String1 is equal to string2 ?: "+se1.equalsIgnoreCase(se2));
+        System.out.println("String1 is equal to string3 ?: "+se1.equalsIgnoreCase(se3));
+
+        System.out.println("\n----Concat----");
+        String fn = "Jayesh";
+        String ln = " Verma";
+        System.out.println(fn.concat(ln));
+
+        System.out.println("\n----Replace----");
+        System.out.println("Replacin 'Jay' with 'Jiv': "+fn.replace("Jay", "Jiv"));
+        System.out.println("Index of V in last name is "+ln.indexOf("V"));
+        System.out.println("Surname is lower case"+ln.toLowerCase());
+        System.out.println("Surname is upper case"+ln.toUpperCase());
+
+        String strg = "    It's 1:28pm now, Are you tired??    ";
+        System.out.println("Before trim: "+strg);
+        System.out.println("After trim: "+strg.trim());
+
+    }
+}
+
+//3.b Write a Java program to accept n strings and sort names in ascending order.
+
+import java.util.Scanner;
+
+public class sortNames {
+    public static void main(String[] args) {
+        try (Scanner input = new Scanner(System.in)) {
+            int n;
+            String temp;
+
+            System.out.print("Enter number of names you want to enter: ");
+            n = input.nextInt();
+            input.nextLine(); 
+
+            String[] names = new String[n];
+            System.out.println("Enter total " + n + " names.");
+            for (int i = 0; i < n; i++) {
+                System.out.print("Enter " + (i+1) + " names: ");
+                names[i] = input.nextLine();
+            }
+            
+            for (int i = 0; i < n; i++) {
+                for (int j = i + 1; j < n; j++) {
+                    if (names[i].compareTo(names[j]) >= 0) {
+                        temp = names[i];
+                        names[i] = names[j];
+                        names[j] = temp;
+                    }
+                }
+            }
+            
+            System.out.println("\nNames in sorted order: ");
+            for (int i = 0; i < n; i++) {
+                System.out.println((i+1)+". "+names[i]);
+            }
+        }
+    }
+}
+
+//4.a write a java program to create a package MyPack with the class Balance to chekc the account balance of user. If it is less than 0 then show message
+
+package MyPack;
+
+class Balance{
+    String name;
+    double bal;
+
+    Balance(String n, double b){
+        name = n;
+        bal = b;
+    }
+
+    void show(){
+        if (bal < 0 )
+            System.out.println("-->");
+        System.out.println(name+" :Rs"+bal);
+    }
+}
+
+public class AccountBalance{
+    public static void main(String[] args){
+        Balance[] cur = new Balance[3];
+        cur[0] = new Balance("Jayesh", 123.123);
+        cur[1] = new Balance("Yash", 6234.6234);
+        cur[2] = new Balance("Jay", -2856.25);
+
+        for(int i=0;i<3;i++) 
+            cur[i].show();
+    }
+}   
+
+//4.b Write a java program to create a package and display a message.
+
+package SecondPack;
+
+class pack{
+    public static void main(String[] args){
+        System.out.println("This is an second package!!!");
+    }
+}
+
+//5 demonstrate java inhertance using extends keyword
+class Area {
+
+    int width, height;
+
+    Area(int w, int h) {
+        width = w;
+        height = h;
+    }
+
+    public void showArea() {
+        int A;
+        System.out.println("Height : " + height + " and width is " + width);
+        A = width * height;
+        System.out.println("\nArea is " + A);
+    }
+}
+
+class Rectangle extends Area {
+    Rectangle(int w, int h) {
+        super(w, h);
+    }
+
+    public static void main(String args[]) {
+        Rectangle R = new Rectangle(10, 20);
+        R.showArea();
+    }
+}
+
+//6. method overloading
+class overloaddemo{
+    void test(){
+        System.out.println("no parameter");
+    }
+    void test(int a){
+        System.out.println("a="+a);
+    }
+    void test(int a, int b){
+        System.out.println("a and b: "+a+" "+b);
+    }
+    double test(double a){
+        System.out.println("double a: "+a);
+        return a*a;
+    }
+}
+
+class overload{
+    public static void main(String[] args){
+        overloaddemo ob = new overloaddemo();
+        double result;
+
+        ob.test();
+        ob.test(10);
+        ob.test(10,20);
+        ob.test(2.1);
+        result = ob.test(1.2);
+        System.out.print(result);
+    }
+}
+
+//6.demonstrate method and method overriding in java
+class DemoOverride {
+    int i;
+
+    DemoOverride() {
+        i = 10;
+    }
+
+    public void display() {
+        System.out.println("i " + i);
+    }
+}
+
+class DemoChildOverride extends DemoOverride {
+    int j;
+
+    DemoChildOverride() {
+        j = 20;
+    }
+
+    public void display() {
+        System.out.println("j : " + j);
+    }
+}
+
+class MOverride {
+    public static void main(String args[]) {
+        DemoChildOverride dco = new DemoChildOverride();
+        dco.i = 40;
+        dco.j = 60;
+        dco.display();
+    }
+}
+
+
+//7.a demonstrate creating your own exception in java
+class NumberRangeException extends Exception {
+    String msg;
+
+    NumberRangeException() {
+        msg = new String("Enter a number between 20 and 100");
+    }
+}
+
+public class exception {
+    public static void main(String args[]) {
+        try {
+            int x = 10;
+            if (x < 20 || x > 100)
+                throw new NumberRangeException();
+        } catch (NumberRangeException e) {
+            System.out.println(e);
+        }
+    }
+}
+
+//7.b 2nd exception example
+class MyException extends Exception {
+    MyException(String message) {
+        super(message);
+    }
+}
+
+public class ExceptionDemo {
+    public static void main(String args[]) throws Exception {
+        ExceptionDemo exceptionDemo = new ExceptionDemo();
+        exceptionDemo.displayNumbers();
+    }
+
+    public void displayNumbers() throws MyException {
+        for (int i = 0; i < 10; i++) {
+            System.out.println("i= " + i);
+            if (i == 6) {
+                throw new MyException("My Exception Occurred");
+            }
+        }
+    }
+}
+
+//9.a write a java list example and demonstrate methods of java list interface
+import java.util.*;
+public class list{
+    public static void main(String[] args){
+        List<String> arrayList = new ArrayList<String>();
+        List<String> linkedList = new LinkedList<String>();
+        List<String> vectorObject = new Vector<String>();
+    
+        arrayList.add("This");
+        arrayList.add("is");
+        arrayList.add("Arraylist");
+        
+        linkedList.add("This");
+        linkedList.add("is");
+        linkedList.add("linkedList");
+        
+        vectorObject.add("This");
+        vectorObject.add("is");
+        vectorObject.add("vectorObject");
+
+        System.out.println("Array list: "+arrayList);
+        System.out.println("Linked list: "+linkedList);
+        System.out.println("Vector: "+vectorObject);        
+    }
+}
+
+//9.b aggregation
+// Program for aggregation 
+
+class Operation{
+    int square(int n){
+        return n * n;
+    }
+}
+ 
+class Circle{
+    Operation op; //aggregatoin
+    double pi = Math.PI;
+
+    double area(int radius){
+        op = new Operation();
+        int rsq = op.square(radius); //code reusability (i.e delegates the method call)
+        return pi * rsq;
+    }
+
+    public static void main(String[] args){
+        Circle c= new Circle();
+        double rslt = c.area(5);
+        System.out.println("The area of circle is "+rslt);
+    }
+}
+
+//10.a program  Demonstrat use of abstract class
+
+// abstract class
+abstract class Car{
+    abstract void run(); //abstract method can't have definition
+}
+
+class HondaCity extends Car{
+    @Override
+    void run(){ //run method is compalsary to be define in sub class coz the super class is abstract class
+        System.out.println("Honda city is running safely");
+    }
+
+    public static void main(String[] args){
+        Car c = new HondaCity();
+        c.run();
+    }
+}
+
+//10.b to show mutiple child class can extends a common parent class
+
+abstract class Shape{
+    abstract void draw();
+}
+
+class Rectangle extends Shape{
+    @Override
+    void draw(){
+        System.out.println("Drawing rectangle");
+    }
+}
+
+class Circle extends Shape{
+    @Override
+    void draw(){
+        System.out.println("Drawing circle");
+    }
+}
+
+class TestAbstract{
+    public static void main(String[] args){
+        // Shape s = new Shape();
+        Shape s1 = new Rectangle();
+        Shape s2 = new Circle();
+        s1.draw();
+        s2.draw();
+    }
+}
+
+//11.a interface program
+
+// All the mehtod s inside an interface are implicitly public and all fields/variables are implicitly public static final
+
+interface Language{
+    // String type = "Programming language"; //by ddefault public static final
+    abstract void getName(String name); //by default public
+}
+
+// class implements interface
+class ProgrammingLang implements Language{
+    // implementation of abstract method
+    public void getName(String name){
+        System.out.println("Programming Language: "+name);
+    }
+}
+
+class Main{
+    public static void main(String[] args){
+        ProgrammingLang lang = new ProgrammingLang();
+        lang.getName("Java");
+    }
+}
+
+//11.b reader writer programs
+import java.io.*;
+
+public class ReaderWriter {
+    public static void main(String args[]) throws IOException {
+        System.out.println("With InputStreamReader");
+        int a;
+        String s;
+
+        // Create an InputStreamReader to read input from the console
+        InputStreamReader inr = new InputStreamReader(System.in);
+        System.out.print("Enter a line: ");
+
+        // Read characters until Enter (ASCII 13) is pressed
+        while ((a = inr.read()) != 13) {
+            System.out.print((char) a);
+        }
+
+        System.out.println(); // Print a newline
+        System.out.println("\nWith BufferedReader and InputStreamReader");
+
+        // Create a BufferedReader to read input from the console using InputStreamReader  
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        System.out.print("Enter a line: ");
+
+        // Read a line of text from the console
+        String inputLine = br.readLine();
+        System.out.println("You entered: " + inputLine);
+
+        System.out.println("\nOutput With PrintWriter and FileWriter");
+
+        // Create a BufferedReader to read input from the console using InputStreamReader
+        BufferedReader br1 = new BufferedReader(new InputStreamReader(System.in));
+
+        // Create a PrintWriter to write output to a file named "demo.out"
+        PrintWriter p = new PrintWriter(new FileWriter("Output.txt"));
+
+        System.out.print("Enter lines (Ctrl+C to exit): ");
+
+        // Read lines from the console and write them to the file with a prefix
+        while ((s = br1.readLine()) != null) {
+            p.println("Output: " + s);
+        }
+
+        // Close the PrintWriter to save the changes to the file
+        p.close();
+    }
+}
+
+//12. Write a java program using runnable interface and with the help of thread class, create three 
+threads. Run each thread 10 times and then stop thread execution.
+// Define a class A that implements the Runnable interface
+class A implements Runnable {
+    public void run() {
+        int i;
+        // Print numbers from 1 to 10 with thread identifier A
+        for (i = 1; i <= 3; i++) {
+            System.out.println("Thread A : " + i);
+        }
+    }
+}
+
+// Define a class B that implements the Runnable interface
+class B implements Runnable {
+    public void run() {
+        int i;
+        // Print numbers from 1 to 10 with thread identifier B
+        for (i = 1; i <= 3; i++) {
+            System.out.println("Thread B : " + i);
+        }
+    }
+}
+
+// Define a class C that implements the Runnable interface
+class C implements Runnable {
+    public void run() {
+        int i;
+        // Print numbers from 1 to 10 with thread identifier C
+        for (i = 1; i <= 3; i++) {
+            System.out.println("Thread C : " + i);
+        }
+    }
+}
+
+// Define a class RunnableDemo
+class RunnableDemo {
+    public static void main(String hello[]) throws Exception {
+        System.out.println("Main starts");
+        
+        // Create three thread objects (t1, t2, t3) associated with A, B, and C
+        Thread t1 = new Thread(new A());
+        Thread t2 = new Thread(new B());
+        Thread t3 = new Thread(new C());
+
+        // Start the threads
+        t1.start();
+        t2.start();
+        t3.start();
+
+        // Wait for all threads to finish
+        t1.join();
+        t2.join();
+        t3.join();
+
+        System.out.println("Main ends");
+    }// end main()
+}// end class
+
+//13. Write a program to create 4 threads to perform 4 different arithmetic operations like 
+addition, subtraction, multiplication and division. Accept two numbers from command line 
+arguments and perform the operations using thread
+
+import java.util.Scanner;
+
+// Create a class called 'Add' that extends the Thread class
+class Add extends Thread {
+    int n1, n2;
+
+    // Constructor for the 'Add' class
+    public Add(int x, int y) {
+        n1 = x;
+        n2 = y;
+    }
+
+    // Override the 'run' method to perform addition and print the result
+    public void run() {
+        System.out.println("Addition is : " + (n1 + n2));
+    }
+}
+
+// Create a class called 'Sub' that extends the Thread class
+class Sub extends Thread {
+    int n1, n2;
+
+    // Constructor for the 'Sub' class
+    public Sub(int x, int y) {
+        n1 = x;
+        n2 = y;
+    }
+
+    // Override the 'run' method to perform subtraction and print the result
+    @Override
+    public void run() {
+        System.out.println("Subtraction is : " + (n1 - n2));
+    }
+}
+
+// Create a class called 'Mul' that extends the Thread class
+class Mul extends Thread {
+    int n1, n2;
+
+    // Constructor for the 'Mul' class
+    public Mul(int x, int y) {
+        n1 = x;
+        n2 = y;
+    }
+
+    // Override the 'run' method to perform multiplication and print the result
+    @Override
+    public void run() {
+        System.out.println("Multiplication is : " + (n1 * n2));
+    }
+}
+
+// Create a class called 'Div' that extends the Thread class
+class Div extends Thread {
+    int n1, n2;
+
+    // Constructor for the 'Div' class
+    public Div(int x, int y) {
+        n1 = x;
+        n2 = y;
+    }
+
+    // Override the 'run' method to perform division and print the result or handle division by zero
+    @Override
+    public void run() {
+        if (n2 != 0) {
+            System.out.println("Division is : " + (n1 / n2));
+        } else {
+            System.out.println("Division by zero is not allowed.");
+        }
+    }
+}
+
+// Create a class called 'ThreadDemo' to demonstrate the usage of the above thread classes
+class ThreadDemo {
+    public static void main(String ar[]) {
+        try {
+            Scanner scanner = new Scanner(System.in);
+
+            // Prompt the user to enter two numbers
+            System.out.print("Enter 1st number: ");
+            int a = scanner.nextInt();
+            System.out.print("Enter 2nd number: ");
+            int b = scanner.nextInt();
+
+            // Create instances of the thread classes and start them
+            new Add(a, b).start();
+            new Sub(a, b).start();
+            new Mul(a, b).start();
+            new Div(a, b).start();
+            scanner.close();
+        } catch (Exception e) {
+            // Handle exceptions that may occur during user input or thread execution
+            System.err.println("An error occurred: " + e.getMessage());
+        }
+    }
+}
+
+//14. client program 
+import java.io.*;
+import java.net.*;
+import java.util.Scanner;
+
+public class Client {
+    public static void main(String[] args) {
+        final String serverAddress = "localhost"; // Change to the server's IP if needed
+        final int serverPort = 12345; // Specify the server's port
+
+        try {
+            Socket socket = new Socket(serverAddress, serverPort);
+            System.out.println("Connected to server: " + serverAddress + ":" + serverPort);
+
+            BufferedReader reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+            PrintWriter writer = new PrintWriter(socket.getOutputStream(), true);
+            Scanner scanner = new Scanner(System.in);
+
+            System.out.print("Enter names (separated by commas): ");
+            String names = scanner.nextLine();
+
+            // Send names to server
+            writer.println(names);
+
+            // Receive and display the server's confirmation message
+            String confirmationMessage = reader.readLine();
+            System.out.println("Server says: " + confirmationMessage);
+
+            socket.close();
+            reader.close();
+            writer.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
+
+//14. server program 
+import java.io.*;
+
+import java.net.*;
+
+public class Server {
+	public static void main(String[] args) {
+		final int port = 12345; // Specify the port you want to use
+		try {
+			ServerSocket serverSocket = new ServerSocket(port);
+			System.out.println("Server is listening on port " + port);
+
+			while (true) {
+				Socket clientSocket = serverSocket.accept();
+				System.out.println("Client connected: " + clientSocket.getInetAddress());
+
+				BufferedReader reader = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
+				PrintWriter writer = new PrintWriter(clientSocket.getOutputStream(), true);
+
+				String receivedNames = reader.readLine();
+				System.out.println("Received names from client: " + receivedNames);
+
+				// Send confirmation message to client
+				writer.println("NAMES RECEIVED: " + receivedNames);
+
+				writer.close();
+				reader.close();
+				clientSocket.close();
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+}
