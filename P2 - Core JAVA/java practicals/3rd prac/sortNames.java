@@ -10,12 +10,12 @@ public class sortNames {
 
             System.out.print("Enter number of names you want to enter: ");
             n = input.nextInt();
-            input.nextLine(); 
-
+            
             String[] names = new String[n];
             System.out.println("Enter total " + n + " names.");
+            input.nextLine(); 
             for (int i = 0; i < n; i++) {
-                System.out.print("Enter " + (i+1) + " names: ");
+                System.out.println("Enter " + (i+1) + " names: ");
                 names[i] = input.nextLine();
             }
             

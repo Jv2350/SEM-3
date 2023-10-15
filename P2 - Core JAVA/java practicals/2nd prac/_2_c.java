@@ -17,7 +17,7 @@ public class _2_c {
 
         if(dtrmnt>0){
             root1 = (-b + Math.sqrt(dtrmnt))/(2*a);
-            root2 = (-b - Math.sqrt(dtrmnt))/(2*a);
+            root2 = (-b - Math.sqrt(dtrmnt))/(2*a); 
 
             System.out.format("root1 = %.2f and root2 = %.2f",root1,root2);
         } else if(dtrmnt == 0){
